@@ -18,6 +18,40 @@ port= {
   }
 
 
+print("\n\n\n")
+print("Calling update port function:")
+updated_port={}
+
+def update_port(portfolio,updated,date_today):
+  for stock in portfolio:
+    access = portfolio[stock]
+    quant=0
+
+    for date in access:
+      quant= quant + access[date][0]
+    
+      updated[stock]= {date_today:[quant]}
+
+    #   updated[stock]={date_today:x}
+
+update_port(port,updated_port,"Nov20")
+
+print("updated port:")
+print(updated_port)
+
+
+print("End of update port")
+print("\n\n\n")
+    
+
+    
+
+
+
+
+
+
+
 #delete 5
 
 #DOLMA
@@ -55,8 +89,6 @@ def sell(stock_name,quantity):
         date_list.append(dates_1)
 
     for dates in date_list: #[nov16, nov17, nov18]
-
-      # print (dates)
       if stock[dates][0] < quant: # if ['AAPL'][Nov16][0] (2 < 5)
           print("high")
           quant = quant - stock[dates][0]
@@ -82,6 +114,20 @@ sell('AAPL',10)
 print('\n \n \n\n')
 print("Apple stocks in portfolio after deleting:") 
 print(port["AAPL"])
+
+print('\n \n \n\n')
+
+
+port['AAPL']['today'] = [1,2]
+
+port['GOOG']= {'jh': [1,2000]}
+
+print(port)
+
+print('\n \n \n\n')
+
+port['GOOG']['today'] = [1,278]
+print(port)
 
 print('\n \n \n\n')
 
