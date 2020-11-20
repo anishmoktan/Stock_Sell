@@ -1,6 +1,6 @@
 port= {
   'AAPL': {
-            "2020-11-16":[2,150],
+            "2020-11-16":[2,150], #NUMBER OF STOCKS, PRICE
             "2020-11-17":[7,160],
             "2020-11-18":[4,170],
             "2020-11-19":[10,200],
@@ -110,7 +110,7 @@ def sell(stock_name,quantity):
           quant=0
 
 #2,7,4,10
-sell('AAPL',10)
+sell('AAPL',2)
 print('\n \n \n\n')
 print("Apple stocks in portfolio after deleting:") 
 print(port["AAPL"])
